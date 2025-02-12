@@ -14,10 +14,10 @@ import { Keyv } from 'keyv';
       useFactory: async () => {
         return {
           stores: [
-            new Keyv(new KeyvRedis("redis://localhost:6379"))
+            new Keyv(new KeyvRedis(process.env.REDIS_URL_CONNECTION))
           ],
         };
-      }})
+    }}),
   ],
   controllers: [],
   providers: [],
