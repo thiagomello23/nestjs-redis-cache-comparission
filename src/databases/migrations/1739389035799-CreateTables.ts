@@ -10,7 +10,9 @@ export class CreateTables1739389035799 implements MigrationInterface {
                     {
                         name: "id",
                         type: "uuid",
-                        isPrimary: true
+                        isPrimary: true,
+                        generationStrategy: "uuid",
+                        default: "uuid_generate_v4()"
                     },
                     {
                         name: "name",
