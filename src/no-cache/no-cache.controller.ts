@@ -11,7 +11,7 @@ export class NoCacheController {
     ){}
 
     @Get("all")
-    @Cache(true)
+    @Cache(false)
     @UseInterceptors(LoggingPerformanceInterceptor)
     async getAllProducts() {
         return this.noCacheService.getAllProducts()
