@@ -6,6 +6,9 @@ import KeyvRedis from '@keyv/redis';
 import { Keyv } from 'keyv';
 import { NoCacheModule } from './no-cache/no-cache.module';
 import { WithCacheModule } from './with-cache/with-cache.module';
+import { ProductsModule } from './products/products.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { LoggingPerformanceInterceptor } from './logging/logging-perf.interceptor';
 
 @Module({
   imports: [
@@ -21,9 +24,15 @@ import { WithCacheModule } from './with-cache/with-cache.module';
         };
     }}),
     NoCacheModule,
-    WithCacheModule
+    WithCacheModule,
+    ProductsModule
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggingPerformanceInterceptor
+    }
+  ],
 })
 export class AppModule {}

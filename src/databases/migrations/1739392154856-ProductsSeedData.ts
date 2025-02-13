@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 import "dotenv/config";
-import { Product } from "src/entities/product.entity";
+import { Product } from "src/products/product.entity";
 import { faker } from '@faker-js/faker';
 
 export class ProductsSeedData1739392154856 implements MigrationInterface {
