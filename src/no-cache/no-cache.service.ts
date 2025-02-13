@@ -11,6 +11,9 @@ export class NoCacheService {
     ){}
 
     async getAllProducts() {
+        // For testing purpose
+        // await new Promise(resolve => setTimeout(resolve, 3000))
+
         return this.productsRepository
             .createQueryBuilder("products")
             .getMany()

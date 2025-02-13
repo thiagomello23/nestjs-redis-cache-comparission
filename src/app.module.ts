@@ -28,11 +28,6 @@ import { LoggingPerformanceInterceptor } from './logging/logging-perf.intercepto
     ProductsModule
   ],
   controllers: [],
-  providers: [
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: LoggingPerformanceInterceptor
-    }
-  ],
+  providers: [],
 })
 export class AppModule {}
